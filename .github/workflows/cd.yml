@@ -9,12 +9,9 @@ jobs:
 
   deploy:
 
-    runs-on: [self-hosted, Windows, X64]
+    runs-on: self-hosted
 
     steps:
 
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run Application
-        run: dotnet run
+      - name: Test Runner
+        run: echo "Runner is working"
