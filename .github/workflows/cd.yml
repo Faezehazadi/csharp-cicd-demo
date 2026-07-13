@@ -1,18 +1,15 @@
 name: C# CD
 
 on:
-  workflow_run:
-    workflows: ["C# CI"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
 
 jobs:
 
   deploy:
 
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
-    runs-on: self-hosted
+    runs-on: [self-hosted, Windows, X64]
 
     steps:
 
